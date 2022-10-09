@@ -1,4 +1,3 @@
-import undetected_chromedriver
 from bs4 import BeautifulSoup
 import requests
 from requests import get
@@ -9,10 +8,10 @@ url = 'https://www.kinopoisk.ru/lists/movies/top250/?page='
 houses = []
 count = 1
 driver = undetected_chromedriver.Chrome()
-while count <= 5:
-    driver.url = 'https://www.kinopoisk.ru/lists/movies/top250/?page=' + str(count)
-    print(driver.url)
-    response = driver.get(driver.url)
+while count <= 3:
+    url = 'https://www.kinopoisk.ru/lists/movies/top250/?page=' + str(count)
+    print(url)
+    response = get(url)
     html_soup = BeautifulSoup(response.text, 'html.parser')
 
     house_data = html_soup.find_all('div', class_ = "styles_root__ti07r")

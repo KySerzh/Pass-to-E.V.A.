@@ -7,8 +7,7 @@ import random
 url = 'https://www.kinopoisk.ru/lists/movies/top250/?page='
 houses = []
 count = 1
-driver = undetected_chromedriver.Chrome()
-while count <= 3:
+while count <= 5:
     url = 'https://www.kinopoisk.ru/lists/movies/top250/?page=' + str(count)
     print(url)
     response = get(url)
@@ -34,7 +33,7 @@ print(houses[0])
 print()
 n = int(len(houses)) - 1
 count = 0
-while count <= 100:  # count <= n
+while count <= 249:  # count <= n
     info = houses[int(count)]
     number = info.find('span', {"class": "styles_position__TDe4E"}).text
     title = info.find('span', {"class": "styles_mainTitle__IFQyZ styles_activeMovieTittle__kJdJj"}).text

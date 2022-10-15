@@ -16,15 +16,11 @@ while count <= 5:
     house_data = html_soup.find_all('div', class_ = "styles_root__ti07r")
     if house_data != []:
         houses.extend(house_data)
-        value = random.random()
-        scaled_value = 1 + (value * (9 - 5))
-        print(scaled_value)
-        time.sleep(scaled_value)
     else:
         print('empty')
         break
     print('============')
-    time.sleep(60)
+    time.sleep(20)
     print('============')
     count += 1
 

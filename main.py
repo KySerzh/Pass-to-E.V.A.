@@ -34,10 +34,10 @@ while count <= 249:  # count <= n
     number = info.find('span', {"class": "styles_position__TDe4E"}).text
     title = info.find('span', {"class": "styles_mainTitle__IFQyZ styles_activeMovieTittle__kJdJj"}).text
     mark = info.find('span', {"class": "styles_kinopoiskValuePositive__vOb2E styles_kinopoiskValue__9qXjg"}).text
-    all_info = str(number) + " " + title + " " + str(mark)
+    all_info = str(number + title + mark)
     
     with open('all_info.txt', 'a') as file:
-        file.write(all_info.text)
+        file.write(all_info + "/n")
         
     
     count += 1

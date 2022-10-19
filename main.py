@@ -19,9 +19,8 @@ while count <= 5:
     else:
         print('empty')
         break
-    print('============')
-    time.sleep(20)
-    print('============')
+    need = input ('some:')
+    time.sleep(2)
     count += 1
 
 print(len(houses))
